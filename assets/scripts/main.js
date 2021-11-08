@@ -91,7 +91,7 @@ async function fetchRecipes() {
  */
 function createRecipeCards() {
 
-  for(var i = 0; i < recipes.length - 1; i = i + 1){
+  for(var i = 0; i < recipes.length; i = i + 1){
     // Makes a new recipe card
     const recipeCard = document.createElement('recipe-card');
     // Inputs the data for the card. This is just the first recipe in the recipes array,
@@ -123,7 +123,7 @@ function createRecipeCards() {
    * the recipes array. First, please read through the code in this function to
    * understand what it is doing. Then, turn this into a for loop to iterate over 
    * all the recipes. (bonus - add the class 'hidden' to every recipe card with 
-   * an index greater  than 2 in your for loop to make show more button functional)
+   * an index greater than 2 in your for loop to make show more button functional)
    * After this step you should see multiple cards rendered like the end of the last
    * lab
    */
@@ -211,7 +211,8 @@ function bindPopstate() {
    */
 
   window.addEventListener('popstate', (event) => {
-    if (event.state) {
+    const state = event.state;
+    if (state) {
       router.navigate(state);
     }else{
       router.navigate('home', true);
