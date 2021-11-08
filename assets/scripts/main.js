@@ -91,7 +91,7 @@ async function fetchRecipes() {
  */
 function createRecipeCards() {
 
-  for(var i = 0; i < recipes.length; i = i + 1){
+  for(var i = 0; i < recipes.length - 1; i = i + 1){
     // Makes a new recipe card
     const recipeCard = document.createElement('recipe-card');
     // Inputs the data for the card. This is just the first recipe in the recipes array,
